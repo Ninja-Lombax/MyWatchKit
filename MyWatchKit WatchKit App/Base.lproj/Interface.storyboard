@@ -1,16 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14256" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch40"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14243"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14219"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17500"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MyWatchKit_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="42" alignment="left" id="C0A-pa-fpK">
+                            <items>
+                                <label width="1" height="64" alignment="left" text="MTG Life Total Tracker" textAlignment="center" numberOfLines="3" id="Akr-tq-aVP">
+                                    <color key="textColor" name="AccentColor"/>
+                                    <fontDescription key="font" type="system" pointSize="17"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label width="1" height="40" alignment="center" text="Your life total is: 20" textAlignment="center" numberOfLines="4" id="nA0-Li-vJy">
+                            <fontDescription key="font" type="system" pointSize="17"/>
+                        </label>
+                        <group width="1" alignment="left" id="1mt-mg-KDa">
+                            <items>
+                                <button width="76" height="30" alignment="center" title="&lt;" id="dSj-BL-4JL">
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="btnLifeDown" destination="AgC-eL-Hgc" id="5XQ-Kr-H5R"/>
+                                    </connections>
+                                </button>
+                                <button width="77" height="30" alignment="center" title="&gt;" id="WOC-JU-1ms">
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="btnLifeUp" destination="AgC-eL-Hgc" id="gc5-VB-lKa"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="nJf-Yj-lXx">
+                            <items>
+                                <button width="78" height="33" alignment="center" title="EDH Life" id="oY5-HB-sHH">
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="edhHealthToggle" destination="AgC-eL-Hgc" id="orL-eS-hOr"/>
+                                    </connections>
+                                </button>
+                                <button width="76" height="33" alignment="center" title="Reset" id="0de-18-XNa">
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="btnResetLife" destination="AgC-eL-Hgc" id="0BS-w4-sFx"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="edhLife" destination="oY5-HB-sHH" id="HDf-ZH-neO"/>
+                        <outlet property="lblLifeTotal" destination="nA0-Li-vJy" id="3wt-NV-Uda"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="219.95061728395061" y="348.19796954314717"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -32,16 +85,21 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="MyWatchKit_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="MyWatchKit_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
